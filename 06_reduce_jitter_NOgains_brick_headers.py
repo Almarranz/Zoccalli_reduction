@@ -7,21 +7,9 @@ Created on Thu Mar 25 11:18:12 2021
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
-from astropy.table import Table # para leer cualquier tabla
-from astropy.table import Table, Column
 from astropy.io import fits
 import glob
-from matplotlib.colors import LogNorm
-import random
-import statistics
-from scipy.stats import mode
-from astropy import stats
-import random
-import idlwrap
-from astropy.io.fits import getheader
-import os
+
 
 
 
@@ -84,22 +72,13 @@ for v in dic_im:
         #bad = np.where((dic_bpm['bpm'+str(c)]>0)&(dic_mask['mask'+str(c)]>0))
         dark = fits.getdata(dark_path+'dark_chip'+str(c)+'_dit'+str(exptime)+'.fits')
         
-        im=ima-dark
+        im=ima-sky
         #im=im1
         im[good]=im[good]/flat[good]
         for x, y in zip(bad[0], bad[1]) : # sustituye cada bad pixel por la mediana en una caja de 3X3 alrededor
             cacho = im[max(0,x-2):x+3, max(0,y-2):y+3] 
             im[x,y] = np.median([cacho])
-        sky[good]=sky[good]/flat[good]
-        fits.writeto(py_pruebas+'sky_flat_im%s_chip%s.fits'%(count,c),sky,overwrite=True)
-        im=im-sky
-        #im_a=im-sky
-        '''
-        im_a[good]=im_a[good]/flat[good]
-        '''
-        for x, y in zip(bad[0], bad[1]) : # sustituye cada bad pixel por la mediana en una caja de 3X3 alrededor
-            cacho = im[max(0,x-2):x+3, max(0,y-2):y+3]
-            im[x,y] = np.median([cacho])
+        
         new_hdul.writeto(red_im+'im'+str(count)+'_NOgains_chip'+str(c)+'_dit'+str(exptime)+'.fits',overwrite=True)
         fits.update(red_im+'im'+str(count)+'_NOgains_chip'+str(c)+'_dit'+str(exptime)+'.fits',im*masc,header,1,overwrite=True)
         #fits.writeto(py_pruebas+'reduc_im_'+str(count)+'_NOgains_chip'+str(c)+'_dit'+str(exptime)+'.fits',im*masc,header+big_header,overwrite=True)
