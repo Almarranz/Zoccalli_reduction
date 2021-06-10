@@ -102,12 +102,9 @@ gains=np.zeros(shape=(4,1))
 for chip in range(1,5):
     im_chip,header=fits.getdata(im_sto+'im_chip_'+str(chip)+'_dit'+str(exptime)+'.fits',header=True)
     dark=dic_dark['dark'+str(chip)]
-    im_chip=im_chip-dark
+    #im_chip=im_chip-dark ·NO substracting the dark
     
-    prueba_dark=im_chip[0,:,:]-dark
-    p_dark=im_chip-dark
-    fits.writeto(py_pruebas+'prueba_dark.fits',prueba_dark,overwrite=True)
-    fits.writeto(py_pruebas+'p_dark.fits',p_dark,overwrite=True)
+    
     
     good=dic_good['good'+str(chip)]
     flat=dic_flat['flat'+str(chip)]
