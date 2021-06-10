@@ -4,7 +4,7 @@ Reduction of Zoccali´s data
 Pipeline The Brick….
 1.  Los flats y dark se hacen con gasgano
 2. Del 01 al 06 se hace con python con los correspondientes scrips in la carpeta scrips
-3. 07 y 07.1 se hace con IDL con los scrips que se indican abajo.
+3. 07 se hace con IDL con los scrips que se indican abajo.
 
 01_DarK
 02_Flats
