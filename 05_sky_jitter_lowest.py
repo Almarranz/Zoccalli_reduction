@@ -22,7 +22,7 @@ import statistics
 
 from astropy import stats as sta
 #%%
-band='H'
+band='Ks'
 exptime=10
 py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
 raws='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/raw/NPL054_'+band+'/raw_sci_only/'
