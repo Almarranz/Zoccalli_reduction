@@ -5,11 +5,11 @@ Created on Thu Mar 25 11:18:12 2021
 
 @author: amartinez
 """
-
+#%%
 import numpy as np
 from astropy.io import fits
 import glob
-
+import os
 
 
 
@@ -28,7 +28,7 @@ red_im = '/Users/amartinez/Desktop/PhD/HAWK/The_Brick/06_Reduce/054_'+band+'/dit
 sky_sto='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/05_Sky/054_'+band+'/dit_'+str(exptime)+'/im/sky_jitter/'
 
 name='54_'+band
-
+#%%
 imf=sorted(glob.glob(raws+'*fits'))#,key=os.path.getmtime)
 dim=0
 dic_im={}
@@ -83,4 +83,12 @@ for v in dic_im:
         fits.update(red_im+'im'+str(count)+'_NOgains_chip'+str(c)+'_dit'+str(exptime)+'.fits',im*masc,header,1,overwrite=True)
         #fits.writeto(py_pruebas+'reduc_im_'+str(count)+'_NOgains_chip'+str(c)+'_dit'+str(exptime)+'.fits',im*masc,header+big_header,overwrite=True)
 print('#### Done with reducction No Gains of %s sec DIT images ####'%(exptime))
-        
+#%%
+files = sorted(glob.glob(red_im+'*.fits'),key=os.path.getmtime)
+files =[os.path.basename(files[i]) for i in range(len(files))]
+with open (red_im+'reduced_dit10.txt', 'w') as in_files:
+    for eachfile in files: in_files.write(eachfile+'\n')
+
+
+
+
