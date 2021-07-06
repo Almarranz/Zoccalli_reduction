@@ -7,18 +7,9 @@ Created on Sat Feb 27 10:46:16 2021
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
-from astropy.table import Table # para leer cualquier tabla
-from astropy.table import Table, Column
 from astropy.io import fits
 import glob
-from matplotlib.colors import LogNorm
-import random
-import statistics
-from scipy.stats import mode
 from astropy import stats
-import random
-import idlwrap
 exptime=10
 band='Ks'
 py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
