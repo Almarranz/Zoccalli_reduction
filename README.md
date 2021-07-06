@@ -7,12 +7,11 @@ Pipeline The Brick for regular reduction. The sky has been computed as the lowes
 1. Flats and Dark with GASGANO
 2. 01 to 06 with python.
 
-01._DarK
-02._Flats
-03._Fullbpm
-04._Makemask
-05._Sky
-06._Reduce.IMPORTANT: go to folder and make a list of reduced files 'reduced_dit10.txt'.
-          NOTE to myself:change the script so you don have to make the list, you dull bastard
-07._Cleancubes( con clean_cubes_headers_thebrick.pro)#TRY USING lacosmic 'python'#
+01. _dark_brick.py
+02. _flat_brick.py
+03. _fulbpm_brick.py
+04. _makemask_brick.py
+05. _sky_jitter_lowest.py
+06. _reduce_jitter_NOgains_brick_headers.py
+07. _cleancubes_thebrick_headers.pro #TRY USING lacosmic 'python'#
 
