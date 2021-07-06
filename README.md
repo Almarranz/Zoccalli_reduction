@@ -4,15 +4,15 @@ in : /Users/amartinez/Desktop/PhD/HAWK/The_Brick/scripts_git/Zoccalli_reduction
 
 Pipeline The Brick for regular reduction. The sky has been computed as the lowest value of the jittered images and substracted directly from the images. 
 
-1. Los flats y dark se hacen con gasgano
-2. Del 01 al 06 se hace con python con los correspondientes scrips in la carpeta scrips
-3. 07 se hace con IDL con los scrips que se indican abajo.
+1. Flats and Dark with GASGANO
+2. 01 to 06 with python.
 
-01_DarK
-02_Flats
-03_Fullbpm
-04_Makemask
-05_Sky
-06_Reduce
-07_Cleancubes( con clean_cubes_headers_thebrick.pro)
+01._DarK
+02._Flats
+03._Fullbpm
+04._Makemask
+05._Sky
+06._Reduce.IMPORTANT: go to folder and make a list of reduced files 'reduced_dit10.txt'.
+          NOTE to myself:change the script so you don have to make the list, you dull bastard
+07._Cleancubes( con clean_cubes_headers_thebrick.pro)#TRY USING lacosmic 'python'#
 
