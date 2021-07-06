@@ -7,8 +7,6 @@ Created on Sat Feb 27 11:26:36 2021
 """
 
 import numpy as np
-import random
-from scipy.ndimage import label, generate_binary_structure
 from scipy import ndimage
 from astropy.io import fits
 import glob
