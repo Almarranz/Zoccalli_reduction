@@ -2,11 +2,11 @@ PRO CLEANCUBES_thebrick_headers;, common_path, in_path, out_path, tmp_path, mask
 
 
    ;field = '10'
-   band = 'H'
+   band = 'Ks'
    exptime =10
    
-   files='/im_dark'
-   ;files='/im_jitter_NOgains'
+   ;files='/im_dark'
+   files='/im_jitter_NOgains'
    ;files='/im_jitter_gains'
    ;files='/im_sky_ESOReflex'
    

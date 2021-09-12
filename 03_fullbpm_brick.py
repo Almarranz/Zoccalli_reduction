@@ -33,7 +33,7 @@ for f in dfiles:
     dark=fits.getdata(f)
     bpm=fits.getdata(bpm_path+'bpm'+str(i)+'_'+name+'.fits')
     print(bpm.shape)
-    mean, median, std=stats.sigma_clipped_stats(dark, sigma=6)
+    mean, median, std=stats.sigma_clipped_stats(dark, sigma=3)
     print(mean, median, std)
     bad= np.where(abs(dark-mean)>sigma_dev_dark*std)
     dark[:,:]=0
