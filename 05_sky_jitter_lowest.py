@@ -22,20 +22,21 @@ import statistics
 
 from astropy import stats as sta
 #%%
-band='Ks'
+band='H'
 exptime=10
-py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
-raws='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/raw/NPL054_'+band+'/raw_sci_only/'
-raw='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/raw/NPL054_'+band+'/raw_sci_only/HAWKI.2019-07-12T06:25:31.454.fits'
-bpm_path ='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/03_Fullbpm/054_'+band+'/dit_'+str(exptime)+'/im/'
-mask_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/04_Makemask/054_'+band+'/dit_'+str(exptime)+'/im/'
-flat_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/02_Flats/054_'+band+'/im/'
-sky_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/01_Dark/054_'+band+'/dit_'+str(exptime)+'/im/' #Sky is the dark in this one.
-dark_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/01_Dark/054_'+band+'/dit_'+str(exptime)+'/im/'
-im_sto='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/05_Sky/054_'+band+'/dit_'+str(exptime)+'/im/sky_jitter/'
-#imag='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/06_Reduce/054_'+band+'/im/'
-name='54_'+band
+py_pruebas='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/py_pruebas/'
+raws='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/raw/058_'+band+'/dit_10/jitter_obs/'
+bpm_path ='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/03_Fullbpm/058_'+band+'/dit_'+str(exptime)+'/im/'
+mask_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/04_Makemask/058_'+band+'/dit_'+str(exptime)+'/im/'
+flat_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/02_Flats/058_'+band+'/dit_10/im/'
+sky_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/01_Dark/058_'+band+'/dit_'+str(exptime)+'/im/' #Sky is the dark in this one.
+dark_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/01_Dark/058_'+band+'/dit_'+str(exptime)+'/im/'
+im_sto='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/05_Sky/058_'+band+'/dit_'+str(exptime)+'/im/'
+#imag='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/06_Reduce/058_'+band+'/im/'
+name='58_'+band
 sigma_dev=20
+
+
 
 
 dic_mask={}
@@ -99,6 +100,7 @@ for c in dic_im:
     t+=1
         
 gains=np.zeros(shape=(4,1))
+#%%
 for chip in range(1,5):
     im_chip,header=fits.getdata(im_sto+'im_chip_'+str(chip)+'_dit'+str(exptime)+'.fits',header=True)
     dark=dic_dark['dark'+str(chip)]

@@ -2,7 +2,7 @@ PRO CLEANCUBES_thebrick_headers;, common_path, in_path, out_path, tmp_path, mask
 
 
    ;field = '10'
-   band = 'Ks'
+   band = 'H'
    exptime =10
    
    ;files='/im_dark'
@@ -12,16 +12,18 @@ PRO CLEANCUBES_thebrick_headers;, common_path, in_path, out_path, tmp_path, mask
    
    ;common_path = '/data/GNS/2015/' + band + '/' + field + '/ims/'
    ;in_path = '/data/GNS/2015/' + band + '/' + field + '/cubes/'
-   in_path ='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/06_Reduce/054_'+band+'/dit_'+strn(exptime)+files+'/'
+   in_path ='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/06_Reduce/058_'+band+'/dit_'+strn(exptime)+files+'/'
    ;out_path = '/data/GNS/2015/' + band + '/' + field + '/cleaned/'
-   out_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/07_Cleancubes/054_'+band+'/dit_'+strn(exptime)+files+'/'
+   out_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/07_Cleancubes/058_'+band+'/dit_'+strn(exptime)+files+'/'
    
    
    ;tmp_path = '/data/GNS/2015/' + band + '/' + field + '/tmp/'
-   tmp_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/tmp/'
-   mask_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/04_Makemask/054_'+band+'/dit_'+strn(exptime)+'/im/'
+   tmp_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/tmp/'
+   mask_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/04_Makemask/058_'+band+'/dit_'+strn(exptime)+'/im/'
    mask_name = 'mask.fits'
-   py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
+   py_pruebas='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/py_pruebas/'
+
+
    
    n_sigma = 7. ; value must be high, otherwise valid pixels of bright stars will be corrected (PSF varies between frames)!
    debug = 0; 

@@ -13,12 +13,11 @@ import glob
 
 exptime=10
 
-band='Ks'
-py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
-raw='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/raw/NPL054_Ks/flat_NPL054/'
-bpm_path ='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/03_Fullbpm/054_'+band+'/dit_'+str(exptime)+'/im/'
-im='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/04_Makemask/054_'+band+'/dit_'+str(exptime)+'/im/'
-name='54_'+band
+band='H'
+py_pruebas='/Users/amartinez/Desktop/PhD/HAWKI/The_Brick/py_pruebas/'
+bpm_path ='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/03_Fullbpm/058_'+band+'/dit_'+str(exptime)+'/im/'
+im='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/04_Makemask/058_'+band+'/dit_'+str(exptime)+'/im/'
+name='58_'+band
 #second struct doesnt group data by the corners, first one does
 
 #struct=np.ones((3,3))

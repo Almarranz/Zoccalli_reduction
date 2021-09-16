@@ -8,16 +8,17 @@ Created on Fri Feb 26 17:46:13 2021
 
 import numpy as np
 from astropy.io import fits
-band='Ks'
-py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
+band='H'
+py_pruebas='/Users/amartinez/Desktop/PhD/HAWKI/The_Brick/py_pruebas/'
 #im='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
-raw='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/02_Flats/054_'+band+'/'
-im ='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/02_Flats/054_'+band+'/im/'
-name='54_'+band
+# raw='/Users/amartinez/Desktop/PhD/HAWKI/The_Brick/02_Flats/054_'+band+'/'
+raw='/Users/alvaromartinez/Desktop/Phd/HAWKI/The_Brick/raw/058_H/dit_10/from_gasgano/'
+im ='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/02_Flats/058_'+band+'/dit_10/im/'
+name='58_'+band
 
 flat_dic={}
 bpm_dic={}
-st=1 # 1 for Ks, 2 for J, 3 for H
+st=1 # 1 for H september 2019
 
 flat_chip1=fits.getdata(raw+'hawki_cal_flat_set0'+str(st)+'_0000.fits',1)
 bpm_chip1=fits.getdata(raw+'hawki_cal_flat_bpmflat_set0'+str(st)+'_0000.fits',1)

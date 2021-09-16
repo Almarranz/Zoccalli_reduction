@@ -15,19 +15,20 @@ import os
 
 band='H'
 exptime=10
-py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
-raws='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/raw/NPL054_'+band+'/raw_sci_only/'
-raw='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/raw/NPL054_'+band+'/raw_sci_only/HAWKI.2019-07-12T06:25:31.454.fits'
-bpm_path ='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/03_Fullbpm/054_'+band+'/dit_'+str(exptime)+'/im/'
-mask_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/04_Makemask/054_'+band+'/dit_'+str(exptime)+'/im/'
-flat_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/02_Flats/054_'+band+'/im/'
-sky_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/01_Dark/054_'+band+'/im/' #Sky is the dark in this one.
-dark_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/01_Dark/054_'+band+'/dit_'+str(exptime)+'/im/'
-imag='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/06_Reduce/054_'+band+'/im/'
-red_im = '/Users/amartinez/Desktop/PhD/HAWK/The_Brick/06_Reduce/054_'+band+'/dit_'+str(exptime)+'/im_jitter_NOgains/'
-sky_sto='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/05_Sky/054_'+band+'/dit_'+str(exptime)+'/im/sky_jitter/'
+py_pruebas='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/py_pruebas/'
+raws='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/raw/058_'+band+'/dit_10/jitter_obs/'
+#raws='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/raw/NPL058_'+band+'/raw_sci_only/HAWKII.2019-07-12T06:25:31.458.fits'
+bpm_path ='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/03_Fullbpm/058_'+band+'/dit_'+str(exptime)+'/im/'
+mask_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/04_Makemask/058_'+band+'/dit_'+str(exptime)+'/im/'
+flat_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/02_Flats/058_'+band+'/dit_10/im/'
+sky_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/01_Dark/058_'+band+'/im/' #Sky is the dark in this one.
+dark_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/01_Dark/058_'+band+'/dit_'+str(exptime)+'/im/'
+imag='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/06_Reduce/058_'+band+'/im/'
+red_im = '/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/06_Reduce/058_'+band+'/dit_'+str(exptime)+'/im_jitter_NOgains/'
+sky_sto='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/05_Sky/058_'+band+'/dit_'+str(exptime)+'/im/'
 
-name='54_'+band
+name='58_'+band
+
 #%%
 imf=sorted(glob.glob(raws+'*fits'))#,key=os.path.getmtime)
 dim=0
@@ -52,7 +53,7 @@ for v in dic_im:
             j=4
         elif c==4:
             j=3
-        print(2,c,j)
+        print('DIT %s,ext %s, chip %s'%(exptime,c,j))
         hdu0 = fits.open(dic_im[v])[0]
         hdu2= fits.ImageHDU()
         new_hdul = fits.HDUList([hdu0, hdu2])

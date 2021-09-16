@@ -12,10 +12,10 @@ import numpy as np
 import glob
 
 exptime=10
-band='Ks'
-py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
-raw_dark='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/raw/NPL054_Ks/dark_NPL054/'
-im ='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/01_Dark/054_'+band+'/dit_'+str(exptime)+'/im/'
+band='H'
+py_pruebas='/Users/alvaromartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
+raw_dark='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/raw/058_H/dit_10/darks/'
+im ='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/01_Dark/058_'+band+'/dit_'+str(exptime)+'/im/'
 
 imf=sorted(glob.glob(raw_dark+'*fits'),key=os.path.getmtime)
 dim=0

@@ -11,13 +11,13 @@ from astropy.io import fits
 import glob
 from astropy import stats
 exptime=10
-band='Ks'
+band='H'
 py_pruebas='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/py_pruebas/'
 #raw='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/raw/NPL054_Ks/flat_NPL054/'
-im ='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/03_Fullbpm/054_'+band+'/dit_'+str(exptime)+'/im/'
-dark_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/01_Dark/054_'+band+'/dit_'+str(exptime)+'/im/'
-bpm_path='/Users/amartinez/Desktop/PhD/HAWK/The_Brick/02_Flats/054_'+band+'/im/'
-name='54_'+band
+im ='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/03_Fullbpm/058_'+band+'/dit_'+str(exptime)+'/im/'
+dark_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/01_Dark/058_'+band+'/dit_'+str(exptime)+'/im/'
+bpm_path='/Users/alvaromartinez/Desktop/PhD/HAWKI/The_Brick/02_Flats/058_'+band+'/dit_10/im/'
+name='58_'+band
 sigma_dev_dark = 20
 
 dfiles=sorted(glob.glob(dark_path+'*.fits'))
