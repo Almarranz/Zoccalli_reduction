@@ -4,7 +4,7 @@ in : /Users/amartinez/Desktop/PhD/HAWK/The_Brick/scripts_git/Zoccalli_reduction
 
 Pipeline The Brick for regular reduction. The sky has been computed as the lowest value of the jittered images and substracted directly from the images. 
 
->Flats and Dark with GASGANO
+>Flats and Dark with GASGANO.
 >01 to 06 with python.
 
 01. _dark_brick.py
